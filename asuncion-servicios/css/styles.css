@@ -1,0 +1,279 @@
+/* =====================================================
+   ASUNCIÓN SERVICIOS — styles.css
+   Organizado por página:
+     1. VARIABLES Y BASE (todas las páginas)
+     2. INDEX.HTML
+     3. PROVEEDORES.HTML
+     4. DETALLE.HTML
+   Para cambiar los colores de todo el sitio, editá las
+   variables de la sección 1.
+   ===================================================== */
+
+
+/* =====================================================
+   1. VARIABLES Y BASE (se usa en las 3 páginas)
+   ===================================================== */
+
+:root {
+  --lila: #7c5cd6;
+  --lila-oscuro: #5a3fb0;
+  --lila-claro: #f5f0ff;
+  --borde: #ddd2f5;
+  --texto: #2b2140;
+  --blanco: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--lila-claro);
+  color: var(--texto);
+}
+
+h1 {
+  margin: 0 0 16px;
+}
+
+/* Enlace del logo (aparece en el header de las 3 páginas) */
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--lila);
+  text-decoration: none;
+}
+
+/* Menú de navegación (Inicio / Proveedores) */
+nav a {
+  margin-left: 16px;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--lila);
+}
+
+
+/* =====================================================
+   2. INDEX.HTML
+   Clases: .header-index  .main-index-up  .main-index-down
+           .enlace-index-proveedores  .footer-index
+   ===================================================== */
+
+/* Barra de arriba */
+.header-index {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--blanco);
+}
+
+/* Mitad superior: título y texto */
+.main-index-up {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  color: var(--blanco);
+
+    /* 1. Fondo: Primero el "filtro" lila semitransparente, luego la imagen */
+  background-image: 
+    linear-gradient(rgba(124, 92, 214, 0.85), rgba(124, 92, 214, .850)), 
+    url('../img/fondo-index.jpg');
+
+  /* 2. Ajustes para que la imagen cubra todo el espacio */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.main-index-up p {
+  max-width: 600px;
+}
+
+/* Mitad inferior: botón */
+.main-index-down {
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--lila-claro);
+}
+
+/* Botón que lleva a proveedores.html */
+.enlace-index-proveedores {
+  padding: 14px 28px;
+  background: var(--lila);
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.enlace-index-proveedores:hover {
+  background: var(--lila-oscuro);
+}
+
+/* Pie de página */
+.footer-index {
+  padding: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  background: var(--blanco);
+  
+}
+
+
+/* =====================================================
+   3. PROVEEDORES.HTML
+   Clases: .header-proveedores  .tarjeta  .headerP
+           .descripcionP  .datosP  .DetallesP
+   Id:     #tarjetas
+   ===================================================== */
+
+/* Barra de arriba */
+.header-proveedores {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--blanco);
+}
+
+/* El título h1 y las tarjetas viven dentro de <main> */
+main > h1 {
+  padding: 24px 24px 0;
+}
+
+/* Contenedor de todas las tarjetas (se adapta al ancho) */
+#tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  padding: 24px;
+}
+
+/* Cada tarjeta */
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+}
+
+/* Nombre y categoría */
+.headerP h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.headerP p {
+  margin: 4px 0 0;
+  color: var(--lila);
+  font-weight: 600;
+}
+
+/* Descripción */
+.descripcionP {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Lista: calificación, zona y teléfono */
+.datosP {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.95rem;
+}
+
+/* Botón "Detalles" */
+.DetallesP {
+  margin-top: auto;
+  padding: 10px;
+  background: var(--lila);
+  color: var(--blanco);
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.DetallesP:hover {
+  background: var(--lila-oscuro);
+}
+
+/* Estados de carga */
+.estado {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 24px;
+}
+
+.estado.error {
+  color: #b3261e;
+}
+/* =====================================================
+   4. DETALLE.HTML
+   Clases: .header-detalle  .contenedor  .btn-secundario
+   Id:     #detalle
+   ===================================================== */
+
+/* Barra de arriba */
+.header-detalle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--blanco);
+}
+
+/* Caja centrada que envuelve todo el contenido */
+.contenedor {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Botón "← Volver al listado" */
+.btn-secundario {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  color: var(--lila);
+  text-decoration: none;
+  border: 1px solid var(--lila);
+  border-radius: 8px;
+  background: var(--blanco);
+}
+
+.btn-secundario:hover {
+  background: var(--lila);
+  color: var(--blanco);
+}
+
+/* Aquí se dibuja el proveedor (lo llena el JavaScript) */
+#detalle {
+  padding: 24px;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+}
+
+#detalle p {
+  margin: 8px 0;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Directorio de proveedores de servicios locales en Asunción, Paraguay">
+  <title>Asunción Servicios — Proveedores</title>
+  <link rel="icon" type="image/png" href="img/icono.png">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="module">
+  const tarjetas = document.getElementById("tarjetas")
+
+  // 1) CARGANDO: se muestra antes de pedir los datos
+
+  // Pausa para mostrar mensaje de "cargando"
+  const pausa = (ms) => new Promise(resolver => setTimeout(resolver, ms))
+    
+  try {
+    await pausa(700)
+
+    const datosBruto = await fetch("data/proveedores.json")
+
+    // Si el archivo no existe (404), forzamos el error
+    if (!datosBruto.ok) throw new Error("No se pudo leer el JSON")
+
+    const datosLimpio = await datosBruto.json()
+    const proveedores = datosLimpio.proveedores
+
+    // 2) SIN RESULTADOS: el array llegó vacío
+    if (proveedores.length === 0) {
+      tarjetas.innerHTML = `<p class="estado">No hay proveedores disponibles.</p>`
+    } else {
+      // 3) TODO BIEN: tarjetas de proveedores
+      tarjetas.innerHTML = datosLimpio.proveedores.map(p =>`
+      <article class="tarjeta">
+        
+        <header class="headerP">
+          <h2>${p.nombre}</h2>
+          <p>${p.categoria}</p>
+          </header>
+          
+          <p class="descripcionP">${p.descripcion}</p>
+          
+          <ul class="datosP">
+            <li>${p.calificacion} de 5 ⭐</li>
+            <li>📍${p.zona}</li>
+            <li><a href="tel:${p.telefono}">${p.telefono}</a></li>
+            </ul>
+            
+            <a class="DetallesP" href="detalle.html?id=${p.id}">Detalles</a>
+            
+            </article>
+            `).join("")
+    }
+
+  } catch (error) {
+    // 4) ERROR: cualquier falla de arriba cae acá
+    tarjetas.innerHTML = `<p class="estado error">No pudimos cargar los proveedores. Probá de nuevo más tarde.</p>`
+    console.error(error)
+  }
+  </script>
+
+</head>
+<body>
+
+  <header>
+    <div class="header-proveedores">
+      <a href="index.html" class="logo">Asunción Servicios</a>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="proveedores.html">Proveedores</a>
+      </nav>
+    </div>
+  </header>
+
+    <main>
+
+      <h1>Proveedores de Servicios</h1>
+      <section id="tarjetas">
+      <p class="estado">Cargando proveedores...</p>
+      </section>
+    
+    </main>
+
+</body>
+
+</html>

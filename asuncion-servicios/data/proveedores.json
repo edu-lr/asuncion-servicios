@@ -1,0 +1,84 @@
+{
+  "proveedores": [
+    {
+      "id": 1,
+      "nombre": "Juan Pérez",
+      "categoria": "Plomería",
+      "calificacion": 4.5,
+      "telefono": "+595981111111",
+      "zona": "Asunción",
+      "descripcion": "Plomero con 15 años de experiencia. Especialista en fugas y destapes.",
+      "disponible": true
+    },
+    {
+      "id": 2,
+      "nombre": "María González",
+      "categoria": "Electricidad",
+      "calificacion": 4.8,
+      "telefono": "+595981222222",
+      "zona": "San Lorenzo",
+      "descripcion": "Electricista residencial. Instalaciones y reparaciones eléctricas rápidas.",
+      "disponible": true
+    },
+    {
+      "id": 3,
+      "nombre": "Carlos Ramírez",
+      "categoria": "Gasfitería",
+      "calificacion": 3.9,
+      "telefono": "+595981333333",
+      "zona": "Lambaré",
+      "descripcion": "Gasfitero certificado. Atención a fugas de gas y mantenimiento de calentadores.",
+      "disponible": false
+    },
+    {
+      "id": 4,
+      "nombre": "Ana Martínez",
+      "categoria": "Carpintería",
+      "calificacion": 4.2,
+      "telefono": "+595981444444",
+      "zona": "Fernando de la Mora",
+      "descripcion": "Carpintero especializado en muebles y puertas de madera.",
+      "disponible": true
+    },
+    {
+      "id": 5,
+      "nombre": "Roberto Díaz",
+      "categoria": "Pintura",
+      "calificacion": 4.6,
+      "telefono": "+595981555555",
+      "zona": "Asunción",
+      "descripcion": "Pintor profesional con acabados impecables para interiores y exteriores.",
+      "disponible": true
+    },
+    {
+      "id": 6,
+      "nombre": "Sofía Caballero",
+      "categoria": "Cerrajería",
+      "calificacion": 4.1,
+      "telefono": "+595981666666",
+      "zona": "Luque",
+      "descripcion": "Cerrajero 24 horas. Apertura de vehículso y cambio de cerraduras.",
+      "disponible": false
+    },
+    {
+      "id": 7,
+      "nombre": "Pedro Fernández",
+      "categoria": "Jardinería",
+      "calificacion": 4.4,
+      "telefono": "+595981777777",
+      "zona": "Asunción",
+      "descripcion": "Jardín y césped. Diseño y mantenimiento de espacios verdes residenciales.",
+      "disponible": true
+    },
+    {
+      "id": 8,
+      "nombre": "Laura Gómez",
+      "categoria": "Mudanzas",
+      "calificacion": 4.7,
+      "telefono": "+595981888888",
+      "zona": "San Lorenzo",
+      "descripcion": "Servicios de mudanzas y carga. Mudanzas locales y nacionales con equipo propio.",
+      "disponible": true
+    }
+  ]
+}

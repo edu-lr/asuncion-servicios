@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detalle de proveedor en Asunción, Paraguay">
+  <title>Asunción Servicios — Detalle proveedor</title>
+  <link rel="icon" type="image/png" href="img/icono.png">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="module">
+  const contenedor = document.getElementById("detalle")
+
+  // Pausa opcional para ver el "Cargando..." (borrala antes de Lighthouse)
+  const pausa = (ms) => new Promise(resolver => setTimeout(resolver, ms))
+
+  // 1) CARGANDO: se muestra antes de pedir los datos
+  contenedor.innerHTML = `<p class="estado">Cargando proveedor...</p>`
+
+  try {
+    // Pausa para mostrar mensaje de "cargando"
+    await pausa(700)
+
+    // 2) Sacamos el id de la URL
+    const parametros = new URLSearchParams(window.location.search)
+    const id = Number(parametros.get("id"))
+
+    // 3) Traemos todos los proveedores
+    const datosBruto = await fetch("data/proveedores.json")
+    if (!datosBruto.ok) throw new Error("No se pudo leer el JSON")
+    const datosLimpio = await datosBruto.json()
+
+    // 4) Buscamos el que tiene ese id
+    const p = datosLimpio.proveedores.find(proveedor => proveedor.id === id)
+
+    if (!p) {
+      // 5) SIN RESULTADOS: el id no existe
+      contenedor.innerHTML = `<p class="estado">No encontramos a este proveedor.</p>`
+    } else {
+      // 6) TODO BIEN
+      contenedor.innerHTML = `
+        <h1>${p.nombre}</h1>
+        <p>${p.categoria}</p>
+        <p>${p.descripcion}</p>
+        <p>⭐ ${p.calificacion}</p>
+        <p>📍 ${p.zona}</p>
+        <a href="tel:${p.telefono}">Llamar</a>
+      `
+    }
+
+  } catch (error) {
+    // 7) ERROR: cualquier falla de arriba cae acá
+    contenedor.innerHTML = `<p class="estado error">No pudimos cargar el proveedor. Probá de nuevo más tarde.</p>`
+    console.error(error)
+  }
+  </script>
+
+
+
+</head>
+<body>
+
+  <header>
+    <div class="header-detalle">
+      <a href="index.html" class="logo">Asunción Servicios</a>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="proveedores.html">Proveedores</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="contenedor">
+      <a href="proveedores.html" class="btn-secundario">← Volver al listado</a>
+      <div id="detalle">
+        <h1>Detalle del proveedor</h1>
+        <p class="estado">Cargando...</p>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
