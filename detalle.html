@@ -38,11 +38,14 @@
       contenedor.innerHTML = `<p class="estado">No encontramos a este proveedor.</p>`
     } else {
       // 6) TODO BIEN
-      contenedor.innerHTML = `
+      contenedor.innerHTML = `<img class="fotoD" src="${p.foto}" alt="Foto de ${p.nombre}" loading="lazy">
         <h1>${p.nombre}</h1>
         <p>${p.categoria}</p>
         <p>${p.descripcion}</p>
-        <p>⭐ ${p.calificacion}</p>
+        <p><span class="rating" aria-label="Calificación: ${p.calificacion} de 5">
+        ${"★".repeat(Math.round(p.calificacion))}${"☆".repeat(5-Math.round(p.calificacion))}
+        </span> ${p.calificacion} de 5</p>
+        <p>${p.disponible ? "✅ Disponible" : "❌ No disponible"}</p>
         <p>📍 ${p.zona}</p>
         <a href="tel:${p.telefono}">Llamar</a>
       `

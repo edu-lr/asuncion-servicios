@@ -8,7 +8,8 @@
       "telefono": "+595981111111",
       "zona": "Asunción",
       "descripcion": "Plomero con 15 años de experiencia. Especialista en fugas y destapes.",
-      "disponible": true
+      "disponible": true,
+      "foto": "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
       "telefono": "+595981222222",
       "zona": "San Lorenzo",
       "descripcion": "Electricista residencial. Instalaciones y reparaciones eléctricas rápidas.",
-      "disponible": true
+      "disponible": true,
+      "foto": "https://randomuser.me/api/portraits/women/44.jpg"
     },
     {
       "id": 3,
@@ -28,7 +30,8 @@
       "telefono": "+595981333333",
       "zona": "Lambaré",
       "descripcion": "Gasfitero certificado. Atención a fugas de gas y mantenimiento de calentadores.",
-      "disponible": false
+      "disponible": false,
+      "foto": "https://randomuser.me/api/portraits/men/45.jpg"
     },
     {
       "id": 4,
@@ -37,8 +40,9 @@
       "calificacion": 4.2,
       "telefono": "+595981444444",
       "zona": "Fernando de la Mora",
-      "descripcion": "Carpintero especializado en muebles y puertas de madera.",
-      "disponible": true
+      "descripcion": "Carpintera especializado en muebles y puertas de madera.",
+      "disponible": true,
+      "foto": "https://randomuser.me/api/portraits/women/65.jpg"
     },
     {
       "id": 5,
@@ -48,17 +52,19 @@
       "telefono": "+595981555555",
       "zona": "Asunción",
       "descripcion": "Pintor profesional con acabados impecables para interiores y exteriores.",
-      "disponible": true
+      "disponible": true,
+      "foto": "https://randomuser.me/api/portraits/men/22.jpg"
     },
     {
       "id": 6,
-      "nombre": "Sofía Caballero",
+      "nombre": "Jose Caballero",
       "categoria": "Cerrajería",
       "calificacion": 4.1,
       "telefono": "+595981666666",
       "zona": "Luque",
-      "descripcion": "Cerrajero 24 horas. Apertura de vehículso y cambio de cerraduras.",
-      "disponible": false
+      "descripcion": "Cerrajero 24 horas. Apertura de vehículos y cambio de cerraduras.",
+      "disponible": false,
+      "foto": "https://randomuser.me/api/portraits/men/57.jpg"
     },
     {
       "id": 7,
@@ -68,7 +74,8 @@
       "telefono": "+595981777777",
       "zona": "Asunción",
       "descripcion": "Jardín y césped. Diseño y mantenimiento de espacios verdes residenciales.",
-      "disponible": true
+      "disponible": true,
+      "foto": "https://randomuser.me/api/portraits/men/54.jpg"
     },
     {
       "id": 8,
@@ -78,7 +85,19 @@
       "telefono": "+595981888888",
       "zona": "San Lorenzo",
       "descripcion": "Servicios de mudanzas y carga. Mudanzas locales y nacionales con equipo propio.",
-      "disponible": true
+      "disponible": true,
+      "foto": "https://randomuser.me/api/portraits/women/12.jpg"
+    },
+    {
+      "id": 9,
+      "nombre": "Roberto Gomez",
+      "categoria": "Carpintería",
+      "calificacion": 4.7,
+      "telefono": "+595965414444",
+      "zona": "San Lorenzo",
+      "descripcion": "Carpintero especializado sillas y muebles de Roble.",
+      "disponible": true,
+      "foto": "https://randomuser.me/api/portraits/men/48.jpg"
     }
   ]
 }
