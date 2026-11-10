@@ -99,7 +99,3 @@ Reportes generados sobre el sitio publicado:
 ## 🧪 Pruebas con usuarios
 
 Se probó la app con 5 personas sin conocimientos técnicos, cada una desde su celular. Todas completaron la tarea asignada en menos de un minuto. Sus dos sugerencias (fotos de los proveedores y filtro por categoría) se implementaron en la versión 1.2.0. El detalle completo está en [CHANGELOG.md](CHANGELOG.md), sección "Juicio Humano".
-
-## 📝 Licencia
-
-MIT
